@@ -252,6 +252,7 @@ const calculateAction = () => {
   &__actions-wrapper {
     display: flex;
     justify-content: space-between;
+    padding-bottom: 5px;
   }
 
   & ::v-deep(.el-select) {
@@ -260,14 +261,14 @@ const calculateAction = () => {
 
   &__cost-wrapper {
     display: flex;
-    gap: 10px;
     width: 100%;
   }
 
   &__cost-label {
     color: #888;
     min-width: 60px;
-    font-size: 11px;
+    font-size: 12px;
+    margin-left: 3px;
   }
 
   &__power-wrapper {
