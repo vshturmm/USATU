@@ -51,7 +51,4 @@ const calculateValue = (value) => {
 .output__results-wrapper{
   margin: 5px 0;
 }
-.output__results-hr{
-  color: #888;
-}
 </style>
