@@ -7,18 +7,30 @@
     </template>
     <calculating-form @calculate-value="calculateValue" />
     <div v-if="results">
-      <hr class="output__results-hr"/>
+      <hr class="output__results-hr" />
       <p class="output__results-wrapper">Стоимость электроэнергии</p>
-      <hr class="output__results-hr"/>
-      <div class="output__results" >За сутки:  {{ results.cost }}Р</div>
-      <div class="output__results">За месяц:  {{ results.cost * 30 }}Р</div>
-      <div class="output__results">За год:  {{ results.cost * 365 }}Р</div>
-      <hr class="output__results-hr"/>
+      <hr class="output__results-hr" />
+      <div class="output__results">
+        За сутки: {{ Math.round(results.cost) }}₽
+      </div>
+      <div class="output__results">
+        За месяц: {{ Math.round(results.cost * 30) }}₽
+      </div>
+      <div class="output__results">
+        За год: {{ Math.round(results.cost * 365) }}₽
+      </div>
+      <hr class="output__results-hr" />
       <p class="output__results-wrapper">Расход электроэнергии</p>
-      <hr class="output__results-hr"/>
-      <div class="output__results">За сутки:  {{ results.consumption }}кВт</div>
-      <div class="output__results">За месяц:  {{ results.consumption * 30 }}кВт</div>
-      <div class="output__results">За год:  {{ results.consumption * 365 }}кВт</div>
+      <hr class="output__results-hr" />
+      <div class="output__results">
+        За сутки: {{ Math.round(results.consumption) }}кВт
+      </div>
+      <div class="output__results">
+        За месяц: {{ Math.round(results.consumption * 30) }}кВт
+      </div>
+      <div class="output__results">
+        За год: {{ Math.round(results.consumption * 365) }}кВт
+      </div>
     </div>
   </el-card>
 </template>
@@ -44,11 +56,17 @@ const calculateValue = (value) => {
     justify-content: space-between;
   }
 }
-.output__results{
+.output__results {
   padding-bottom: 4px;
   color: #606266;
 }
-.output__results-wrapper{
+.output__results-wrapper {
   margin: 5px 0;
+}
+.output__results-hr {
+  border: none;
+  color: #a0cfff;
+  background-color: #a0cfff;
+  height: 1px;
 }
 </style>
