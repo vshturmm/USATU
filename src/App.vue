@@ -7,14 +7,18 @@
     </template>
     <calculating-form @calculate-value="calculateValue" />
     <div v-if="results">
-      <p>Стоимость электроэнергии</p>
-      <div>За сутки {{ results.cost }}Р</div>
-      <div>За месяц {{ results.cost * 30 }}Р</div>
-      <div>За год {{ results.cost * 365 }}Р</div>
-      <p>Расход электроэнергии</p>
-      <div>За сутки {{ results.consumption }}кВт</div>
-      <div>За месяц {{ results.consumption * 30 }}кВт</div>
-      <div>За год {{ results.consumption * 365 }}кВт</div>
+      <hr class="output__results-hr"/>
+      <p class="output__results-wrapper">Стоимость электроэнергии</p>
+      <hr class="output__results-hr"/>
+      <div class="output__results" >За сутки:  {{ results.cost }}Р</div>
+      <div class="output__results">За месяц:  {{ results.cost * 30 }}Р</div>
+      <div class="output__results">За год:  {{ results.cost * 365 }}Р</div>
+      <hr class="output__results-hr"/>
+      <p class="output__results-wrapper">Расход электроэнергии</p>
+      <hr class="output__results-hr"/>
+      <div class="output__results">За сутки:  {{ results.consumption }}кВт</div>
+      <div class="output__results">За месяц:  {{ results.consumption * 30 }}кВт</div>
+      <div class="output__results">За год:  {{ results.consumption * 365 }}кВт</div>
     </div>
   </el-card>
 </template>
@@ -39,5 +43,12 @@ const calculateValue = (value) => {
     align-items: center;
     justify-content: space-between;
   }
+}
+.output__results{
+  padding-bottom: 4px;
+  color: #606266;
+}
+.output__results-wrapper{
+  margin: 5px 0;
 }
 </style>
